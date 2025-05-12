@@ -93,6 +93,29 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="RESET"/>
     </comp>
+    <comp lib="0" loc="(1220,720)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(1470,1230)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1490,1230)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1510,1230)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1530,1230)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1580,440)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
     <comp lib="0" loc="(180,90)" name="Clock">
       <a name="facing" val="south"/>
     </comp>
@@ -206,6 +229,18 @@
     <comp lib="5" loc="(1080,420)" name="LED">
       <a name="facing" val="south"/>
     </comp>
+    <comp lib="5" loc="(1470,360)" name="LED">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="5" loc="(1490,360)" name="LED">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="5" loc="(1510,360)" name="LED">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="5" loc="(1530,360)" name="LED">
+      <a name="facing" val="south"/>
+    </comp>
     <comp lib="5" loc="(330,360)" name="LED">
       <a name="facing" val="south"/>
     </comp>
@@ -291,29 +326,70 @@
     <comp lib="5" loc="(980,420)" name="LED">
       <a name="facing" val="south"/>
     </comp>
+    <comp lib="8" loc="(1497,324)" name="Text">
+      <a name="text" val="DATA BUS"/>
+    </comp>
+    <comp lib="8" loc="(543,226)" name="Text">
+      <a name="text" val="ADDRESS BUS"/>
+    </comp>
     <comp loc="(1030,460)" name="program_counter">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(230,120)" name="clk"/>
-    <comp loc="(980,720)" name="memory_address_register"/>
+    <comp loc="(1030,710)" name="memory_address_register">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(1690,490)" name="register_memory_access">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(230,120)" name="clk">
+      <a name="facing" val="north"/>
+    </comp>
     <wire from="(1030,450)" to="(1030,460)"/>
     <wire from="(1060,670)" to="(1060,710)"/>
     <wire from="(1060,670)" to="(1200,670)"/>
     <wire from="(110,100)" to="(130,100)"/>
     <wire from="(110,170)" to="(1180,170)"/>
     <wire from="(1110,120)" to="(1110,440)"/>
-    <wire from="(1110,120)" to="(1970,120)"/>
+    <wire from="(1110,120)" to="(1690,120)"/>
     <wire from="(1110,440)" to="(1110,460)"/>
     <wire from="(1110,440)" to="(1200,440)"/>
+    <wire from="(1140,720)" to="(1220,720)"/>
     <wire from="(1140,760)" to="(1180,760)"/>
     <wire from="(1170,470)" to="(1190,470)"/>
     <wire from="(1170,480)" to="(1190,480)"/>
     <wire from="(1170,510)" to="(1190,510)"/>
     <wire from="(1170,520)" to="(1180,520)"/>
     <wire from="(1180,170)" to="(1180,520)"/>
-    <wire from="(1180,170)" to="(1970,170)"/>
+    <wire from="(1180,170)" to="(1590,170)"/>
     <wire from="(1180,520)" to="(1180,760)"/>
     <wire from="(1200,440)" to="(1200,670)"/>
+    <wire from="(1240,700)" to="(1530,700)"/>
+    <wire from="(1240,710)" to="(1510,710)"/>
+    <wire from="(1240,720)" to="(1490,720)"/>
+    <wire from="(1240,730)" to="(1470,730)"/>
+    <wire from="(1470,360)" to="(1470,450)"/>
+    <wire from="(1470,450)" to="(1470,730)"/>
+    <wire from="(1470,450)" to="(1560,450)"/>
+    <wire from="(1470,730)" to="(1470,1230)"/>
+    <wire from="(1490,360)" to="(1490,440)"/>
+    <wire from="(1490,440)" to="(1490,720)"/>
+    <wire from="(1490,440)" to="(1560,440)"/>
+    <wire from="(1490,720)" to="(1490,1230)"/>
+    <wire from="(1510,360)" to="(1510,430)"/>
+    <wire from="(1510,430)" to="(1510,710)"/>
+    <wire from="(1510,430)" to="(1560,430)"/>
+    <wire from="(1510,710)" to="(1510,1230)"/>
+    <wire from="(1530,360)" to="(1530,420)"/>
+    <wire from="(1530,420)" to="(1530,700)"/>
+    <wire from="(1530,420)" to="(1560,420)"/>
+    <wire from="(1530,700)" to="(1530,1230)"/>
+    <wire from="(1580,440)" to="(1610,440)"/>
+    <wire from="(1590,170)" to="(1590,480)"/>
+    <wire from="(1590,170)" to="(2220,170)"/>
+    <wire from="(1590,480)" to="(1610,480)"/>
+    <wire from="(1690,120)" to="(1690,430)"/>
+    <wire from="(1690,120)" to="(2220,120)"/>
+    <wire from="(1770,480)" to="(1780,480)"/>
     <wire from="(230,120)" to="(1110,120)"/>
     <wire from="(330,330)" to="(330,360)"/>
     <wire from="(330,360)" to="(330,580)"/>
@@ -432,7 +508,7 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="67" y="90">MANUAL</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="63" y="101">HALT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="100" y="79">CLOCK</text>
-      <circ-anchor facing="east" x="150" y="80"/>
+      <circ-anchor facing="north" x="150" y="80"/>
       <circ-port dir="in" pin="410,350" x="100" y="50"/>
       <circ-port dir="in" pin="410,450" x="50" y="60"/>
       <circ-port dir="in" pin="410,560" x="50" y="90"/>
@@ -613,7 +689,7 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="62" y="100">OUT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="196" y="100">RESET</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="131" y="59">CLOCK</text>
-      <circ-anchor facing="west" x="50" y="60"/>
+      <circ-anchor facing="north" x="100" y="50"/>
       <circ-port dir="in" pin="540,430" x="210" y="60"/>
       <circ-port dir="in" pin="540,650" x="130" y="110"/>
       <circ-port dir="in" pin="550,1020" x="130" y="50"/>
@@ -1023,7 +1099,7 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="215" y="109">RESET</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="70" y="61">DATA OUT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="66" y="109">DATA IN</text>
-      <circ-anchor facing="west" x="50" y="60"/>
+      <circ-anchor facing="north" x="50" y="60"/>
       <circ-port dir="in" pin="560,620" x="140" y="120"/>
       <circ-port dir="in" pin="560,660" x="230" y="60"/>
       <circ-port dir="in" pin="560,750" x="230" y="70"/>
@@ -1192,83 +1268,51 @@
     <appear>
       <rect fill="none" height="60" stroke="#000000" width="160" x="50" y="50"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="131" y="84">RMA</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="159" y="60">CLOCK</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="194" y="61">WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="196" y="70">READ</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="130" y="60">CLOCK</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="195" y="100">WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="65" y="60">DATA IN</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="196" y="100">RESET</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="110" y="60">DATA OUT</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="130" y="100">ALWAYS OUT</text>
-      <circ-anchor facing="south" x="130" y="110"/>
-      <circ-port dir="in" pin="550,380" x="50" y="60"/>
-      <circ-port dir="in" pin="560,430" x="210" y="70"/>
-      <circ-port dir="in" pin="560,460" x="210" y="60"/>
-      <circ-port dir="in" pin="560,520" x="160" y="50"/>
-      <circ-port dir="in" pin="560,550" x="210" y="100"/>
-      <circ-port dir="out" pin="1080,380" x="130" y="110"/>
-      <circ-port dir="out" pin="1080,430" x="110" y="50"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="64" y="99">RESET</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="190" y="60">DATA OUT</text>
+      <circ-anchor facing="north" x="130" y="110"/>
+      <circ-port dir="in" pin="540,480" x="50" y="60"/>
+      <circ-port dir="in" pin="540,500" x="210" y="100"/>
+      <circ-port dir="in" pin="540,520" x="130" y="50"/>
+      <circ-port dir="in" pin="540,550" x="50" y="100"/>
+      <circ-port dir="out" pin="890,480" x="210" y="60"/>
     </appear>
-    <comp lib="0" loc="(1080,380)" name="Pin">
+    <comp lib="0" loc="(540,480)" name="Pin">
       <a name="appearance" val="NewPins"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="ALWAYS_OUT"/>
-      <a name="output" val="true"/>
+      <a name="label" val="DATA_IN"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(1080,430)" name="Pin">
+    <comp lib="0" loc="(540,500)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="WRITE"/>
+    </comp>
+    <comp lib="0" loc="(540,520)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLOCK"/>
+    </comp>
+    <comp lib="0" loc="(540,550)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="RESET"/>
+    </comp>
+    <comp lib="0" loc="(890,480)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="DATA_OUT"/>
       <a name="output" val="true"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(550,380)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="DATA_IN"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(560,430)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="READ"/>
-    </comp>
-    <comp lib="0" loc="(560,460)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="WRITE"/>
-    </comp>
-    <comp lib="0" loc="(560,520)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="CLOCK"/>
-    </comp>
-    <comp lib="0" loc="(560,550)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="RESET"/>
-    </comp>
-    <comp lib="1" loc="(1040,430)" name="Controlled Buffer">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="4" loc="(840,350)" name="Register">
+    <comp lib="4" loc="(800,450)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="4"/>
     </comp>
-    <wire from="(1000,380)" to="(1000,430)"/>
-    <wire from="(1000,380)" to="(1080,380)"/>
-    <wire from="(1000,430)" to="(1020,430)"/>
-    <wire from="(1030,440)" to="(1030,490)"/>
-    <wire from="(1040,430)" to="(1080,430)"/>
-    <wire from="(550,380)" to="(840,380)"/>
-    <wire from="(560,430)" to="(690,430)"/>
-    <wire from="(560,460)" to="(710,460)"/>
-    <wire from="(560,520)" to="(720,520)"/>
-    <wire from="(560,550)" to="(730,550)"/>
-    <wire from="(690,430)" to="(690,490)"/>
-    <wire from="(690,490)" to="(1030,490)"/>
-    <wire from="(710,400)" to="(710,460)"/>
-    <wire from="(710,400)" to="(840,400)"/>
-    <wire from="(720,420)" to="(720,520)"/>
-    <wire from="(720,420)" to="(840,420)"/>
-    <wire from="(730,450)" to="(730,550)"/>
-    <wire from="(730,450)" to="(870,450)"/>
-    <wire from="(870,440)" to="(870,450)"/>
-    <wire from="(900,380)" to="(1000,380)"/>
+    <wire from="(540,480)" to="(800,480)"/>
+    <wire from="(540,500)" to="(800,500)"/>
+    <wire from="(540,520)" to="(800,520)"/>
+    <wire from="(540,550)" to="(830,550)"/>
+    <wire from="(830,540)" to="(830,550)"/>
+    <wire from="(860,480)" to="(890,480)"/>
   </circuit>
 </project>
