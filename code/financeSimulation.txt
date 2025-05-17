@@ -179,8 +179,6 @@ BULLISH_TREND:
     PRINT "         /                  "
     IOOUT 0X1 0X0A
     PRINT "        /                   "
-    LOADI R0, 0x0
-    JUMP RANDOM_RESULT_GENERATOR
 
 BEARISH_TREND:
     PRINT "    The market is BEARISH   "
@@ -203,7 +201,38 @@ BEARISH_TREND:
     IOOUT 0X1 0X0A
     PRINT "                      \     "
     IOOUT 0X1 0X0A
+
+BUY_SELL:
     LOADI R0, 0x0
+    PRINT "BUY OR SELL?"
+    IOOUT 0X1 0X0A
+    PRINT "1. BUY "
+    IOOUT 0X1 0X0A
+    PRINT "2. SELL "
+    IOOUT 0X1 0X0A
+
+    MAKE_DECISION:
+        SAVE_KEY R1
+        LOADI R2, 0x1
+        ALU CMP, FLAGS R1, R2
+        CJUMP EQ, BUYING
+
+        LOADI R2, 0x2
+        ALU CMP, FLAGS R1, R2
+        CJUMP EQ, SELLING
+
+        JUMP MAKE_DECISION
+
+BUYING:
+    IOOUT 0X1 0X0A
+    PRINT "You're buying...."
+    IOOUT 0X1 0X0A
+    JUMP RANDOM_RESULT_GENERATOR
+
+SELLING:
+    IOOUT 0X1 0X0A
+    PRINT "You're selling..."
+    IOOUT 0X1 0X0A
     JUMP RANDOM_RESULT_GENERATOR
 
 RANDOM_RESULT_GENERATOR:
