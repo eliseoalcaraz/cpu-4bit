@@ -9,7 +9,9 @@ MENU:
     IOOUT 0X1 0X0A
     PRINT "| 2. Meet the Financial Advisor |"
     IOOUT 0X1 0X0A
-    PRINT "| 3. Exit.                      |"
+    PRINT "| 3. Try Trading                |"
+    IOOUT 0X1 0X0A
+    PRINT "| 4. Exit.                      |"
     IOOUT 0X1 0X0A
     PRINT "|-------------------------------|"
     IOOUT 0X1 0X0A
@@ -29,6 +31,10 @@ WAIT_FOR_INPUT:
     CJUMP EQ, FINANCIAL_ADVISOR
 
     LOADI R0, 0X3
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, TRADING_SIMULATION
+
+    LOADI R0, 0X4
     ALU CMP, FLAGS R0, R1
     CJUMP EQ, EXIT_GAME
 
@@ -126,6 +132,54 @@ REAL_ESTATE:
     PRINT "Make sure to research the market before investing."
     IOOUT 0X1 0X0A
     JUMP WAIT_FOR_CONTINUE
+
+TRADING_SIMULATION:
+    PRINT "  \/ Welcome to the Trading Simulation /\  "
+    IOOUT 0X1 0X0A
+    PRINT "                                           "
+    IOOUT 0X1 0X0A
+    PRINT "                                           "
+    OOUT 0X1 0X0A
+    PRINT "                                           "
+    IOOUT 0X1 0X0A
+    PRINT "                                           "
+    OOUT 0X1 0X0A
+
+TRADE_WIN:
+
+TRADE_LOSS:
+
+BULLISH_TREND:
+    PRINT "    The market is BULLISH   "
+    IOOUT 0X1 0X0A
+    PRINT "                     /      "
+    IOOUT 0X1 0X0A
+    PRINT "                    /       "
+    IOOUT 0X1 0X0A
+    PRINT "                   /        "
+    IOOUT 0X1 0X0A
+    PRINT "            /\    /         "
+    IOOUT 0X1 0X0A
+    PRINT "           /  \  /          "
+    IOOUT 0X1 0X0A
+    PRINT "          /    \/           "
+    IOOUT 0X1 0X0A
+    PRINT "         /                  "
+    IOOUT 0X1 0X0A
+    PRINT "        /                   "
+    JUMP RANDOM_RESULT_GENERATOR
+
+BEARISH_TREND:
+    PRINT "        \                   "
+    PRINT "         \                  "
+    PRINT "          \    /\           "
+    PRINT "           \  /  \          "
+    PRINT "            \/    \         "
+    PRINT "                   \        "
+    PRINT "                    \       "
+    PRINT "                     \      "
+    PRINT "                      \     "
+
 
 WAIT_FOR_CONTINUE:
     PRINT "Press any key to return to the main menu..."
