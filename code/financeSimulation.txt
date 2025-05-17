@@ -1,5 +1,5 @@
 START:
-    COUNTER = 0x0  ; Initialize a counter for the number of times the finance game is played
+    COUNTER = 0x0
 
 MENU:
     IOOUT 0X1 0X0C
