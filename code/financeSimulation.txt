@@ -36,7 +36,7 @@ WAIT_FOR_INPUT:
 
     LOADI R0, 0X4
     ALU CMP, FLAGS R0, R1
-    CJUMP EQ, EXIT_GAME
+    CJUMP EQ, EXIT_JOURNEY
 
     JUMP WAIT_FOR_INPUT
 
@@ -134,23 +134,35 @@ REAL_ESTATE:
     JUMP WAIT_FOR_CONTINUE
 
 TRADING_SIMULATION:
-    PRINT "  \/ Welcome to the Trading Simulation /\  "
-    IOOUT 0X1 0X0A
-    PRINT "                                           "
-    IOOUT 0X1 0X0A
-    PRINT "                                           "
-    OOUT 0X1 0X0A
-    PRINT "                                           "
-    IOOUT 0X1 0X0A
-    PRINT "                                           "
-    OOUT 0X1 0X0A
+    PRINT "Welcome to the Trading Simulation"
+    IOOUT 0x1 0x0A
+    PRINT "Choose a crypto to trade:"
+    IOOUT 0x1 0x0A
+    PRINT "1. BTC (Bitcoin)"
+    IOOUT 0x1 0x0A
+    PRINT "2. ETH (Ethereum)"
+    IOOUT 0x1 0x0A
 
-TRADE_WIN:
+WAIT_FOR_COIN_CHOICE:
+    LOADI R0, 0x0
+    SAVE_KEY R1
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, WAIT_FOR_COIN_CHOICE
 
-TRADE_LOSS:
+    LOADI R0, 0x1
+    ALU CMP, FLAGS R1, R0
+    CJUMP EQ, BULLISH_TREND
+
+    LOADI R0, 0x2
+    ALU CMP, FLAGS R1, R0
+    CJUMP EQ, BEARISH_TREND
+
+    JUMP WAIT_FOR_COIN_CHOICE
 
 BULLISH_TREND:
     PRINT "    The market is BULLISH   "
+    IOOUT 0X1 0X0A
+    PRINT "                      /     "
     IOOUT 0X1 0X0A
     PRINT "                     /      "
     IOOUT 0X1 0X0A
@@ -167,18 +179,71 @@ BULLISH_TREND:
     PRINT "         /                  "
     IOOUT 0X1 0X0A
     PRINT "        /                   "
+    LOADI R0, 0x0
     JUMP RANDOM_RESULT_GENERATOR
 
 BEARISH_TREND:
+    PRINT "    The market is BEARISH   "
+    IOOUT 0X1 0X0A
     PRINT "        \                   "
+    IOOUT 0X1 0X0A
     PRINT "         \                  "
+    IOOUT 0X1 0X0A
     PRINT "          \    /\           "
+    IOOUT 0X1 0X0A
     PRINT "           \  /  \          "
+    IOOUT 0X1 0X0A
     PRINT "            \/    \         "
+    IOOUT 0X1 0X0A
     PRINT "                   \        "
+    IOOUT 0X1 0X0A
     PRINT "                    \       "
+    IOOUT 0X1 0X0A
     PRINT "                     \      "
+    IOOUT 0X1 0X0A
     PRINT "                      \     "
+    IOOUT 0X1 0X0A
+    LOADI R0, 0x0
+    JUMP RANDOM_RESULT_GENERATOR
+
+RANDOM_RESULT_GENERATOR:
+    PRINT "PRESS 1 IF YOU WANT TO KNOW THE RESULT OF YOUR TRADE "
+    IOOUT 0x1 0x0A
+
+DO_ADD:
+    SAVE_KEY R1
+    LOADI R2, 0X1
+    ALU ADD, R0, R0, R2
+    ALU CMP, FLAGS R1, R2
+    CJUMP EQ, SHOW_RESULT
+
+    JUMP DO_SUB
+
+DO_SUB:
+    SAVE_KEY R1
+    LOADI R2, 0X1
+    ALU SUB, R0, R0, R2
+    ALU CMP, FLAGS R1, R2
+    CJUMP EQ, SHOW_RESULT
+
+    JUMP DO_ADD
+
+SHOW_RESULT:
+    LOADI R1, 0x1
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, TRADE_WIN
+
+    JUMP TRADE_LOSS
+
+TRADE_WIN:
+    PRINT "You win a trade"
+    IOOUT 0x1 0x0A
+    JUMP WAIT_FOR_CONTINUE
+
+TRADE_LOSS:
+    PRINT "You lose a trade"
+    IOOUT 0x1 0x0A
+    JUMP WAIT_FOR_CONTINUE
 
 
 WAIT_FOR_CONTINUE:
@@ -193,7 +258,7 @@ WAIT_FOR_CONTINUE:
 
     JUMP MENU
 
-EXIT_GAME:
+EXIT_JOURNEY:
     PRINT "Thank you for managing your finances today!"
     IOOUT 0X1 0X0A
-    JUMP START
+    JUMP WAIT_FOR_CONTINUE
