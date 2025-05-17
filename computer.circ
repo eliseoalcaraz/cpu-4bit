@@ -790,10 +790,10 @@
     <comp lib="5" loc="(980,420)" name="LED">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="8" loc="(1497,324)" name="Text">
+    <comp lib="8" loc="(1495,320)" name="Text">
       <a name="text" val="DATA BUS"/>
     </comp>
-    <comp lib="8" loc="(543,226)" name="Text">
+    <comp lib="8" loc="(540,225)" name="Text">
       <a name="text" val="ADDRESS BUS"/>
     </comp>
     <comp loc="(1060,740)" name="memory_address_register">
@@ -802,24 +802,36 @@
     <comp loc="(1070,500)" name="program_counter">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1190,1530)" name="io_register"/>
-    <comp loc="(1680,610)" name="alu_memory_access"/>
+    <comp loc="(1190,1530)" name="io_register">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(1680,610)" name="alu_memory_access">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(1690,460)" name="register_memory_access">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1720,920)" name="instruction_register"/>
+    <comp loc="(1720,920)" name="instruction_register">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(180,120)" name="clk">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1870,1170)" name="step_counter"/>
+    <comp loc="(1870,1170)" name="step_counter">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(2010,570)" name="alu">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(2240,1020)" name="control_unit"/>
+    <comp loc="(2240,1020)" name="control_unit">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(2340,720)" name="register_file">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(920,1530)" name="io_selection_register"/>
+    <comp loc="(920,1530)" name="io_selection_register">
+      <a name="facing" val="north"/>
+    </comp>
     <wire from="(1000,1510)" to="(1010,1510)"/>
     <wire from="(1000,1550)" to="(1020,1550)"/>
     <wire from="(1010,1450)" to="(1010,1510)"/>
@@ -2258,12 +2270,6 @@
     </comp>
     <comp lib="0" loc="(1600,2870)" name="Splitter">
       <a name="appear" val="center"/>
-      <a name="facing" val="north"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-    </comp>
-    <comp lib="0" loc="(1600,2870)" name="Splitter">
-      <a name="appear" val="center"/>
       <a name="bit0" val="3"/>
       <a name="bit1" val="2"/>
       <a name="bit2" val="1"/>
@@ -2272,6 +2278,12 @@
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
       <a name="spacing" val="2"/>
+    </comp>
+    <comp lib="0" loc="(1600,2870)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="north"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
     </comp>
     <comp lib="0" loc="(1900,2420)" name="Splitter">
       <a name="appear" val="center"/>

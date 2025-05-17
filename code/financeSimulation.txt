@@ -1,0 +1,145 @@
+START:
+    COUNTER = 0x0  ; Initialize a counter for the number of times the finance game is played
+
+MENU:
+    IOOUT 0X1 0X0C
+    PRINT "|-------Finance Journey --------|"
+    IOOUT 0X1 0X0A
+    PRINT "| 1. Check Investment Tips      |"
+    IOOUT 0X1 0X0A
+    PRINT "| 2. Meet the Financial Advisor |"
+    IOOUT 0X1 0X0A
+    PRINT "| 3. Exit.                      |"
+    IOOUT 0X1 0X0A
+    PRINT "|-------------------------------|"
+    IOOUT 0X1 0X0A
+
+WAIT_FOR_INPUT:
+    LOADI R0, 0X0
+    SAVE_KEY R1
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, WAIT_FOR_INPUT
+
+    LOADI R0, 0X1
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, INVESTMENT_TIPS
+
+    LOADI R0, 0X2
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, FINANCIAL_ADVISOR
+
+    LOADI R0, 0X3
+    ALU CMP, FLAGS R0, R1
+    CJUMP EQ, EXIT_GAME
+
+    JUMP WAIT_FOR_INPUT
+
+INVESTMENT_TIPS:
+    PRINT "You explore different ways to grow your savings."
+    IOOUT 0X1 0X0A
+    PRINT "What do you want to learn about?"
+    IOOUT 0X1 0X0A
+    PRINT "1. Stocks"
+    IOOUT 0X1 0X0A
+    PRINT "2. Bonds"
+    IOOUT 0X1 0X0A
+
+    WAIT_FOR_INVEST_INPUT:
+        LOADI R0, 0X0
+        SAVE_KEY R1
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, WAIT_FOR_INVEST_INPUT
+
+        LOADI R0, 0X1
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, LEARN_STOCKS
+
+        LOADI R0, 0X2
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, LEARN_BONDS
+
+        JUMP WAIT_FOR_INVEST_INPUT
+
+LEARN_STOCKS:
+    PRINT "Stocks offer high returns but come with higher risk."
+    IOOUT 0X1 0X0A
+    PRINT "Diversifying your portfolio is key!"
+    IOOUT 0X1 0X0A
+    JUMP WAIT_FOR_CONTINUE
+
+LEARN_BONDS:
+    PRINT "Bonds are safer and offer stable income."
+    IOOUT 0X1 0X0A
+    PRINT "Great for long-term security."
+    IOOUT 0X1 0X0A
+    JUMP WAIT_FOR_CONTINUE
+
+FINANCIAL_ADVISOR:
+    PRINT "You consult a financial advisor for guidance."
+    IOOUT 0X1 0X0A
+    PRINT "Choose your goal:"
+    IOOUT 0X1 0X0A
+    PRINT "1. Save for Retirement"
+    IOOUT 0X1 0X0A
+    PRINT "2. Build Emergency Fund"
+    IOOUT 0X1 0X0A
+    PRINT "3. Invest in Real Estate"
+    IOOUT 0X1 0X0A
+
+    WAIT_FOR_ADVISOR_INPUT:
+        LOADI R0, 0X0
+        SAVE_KEY R1
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, WAIT_FOR_ADVISOR_INPUT
+
+        LOADI R0, 0X1
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, RETIREMENT
+
+        LOADI R0, 0X2
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, EMERGENCY_FUND
+
+        LOADI R0, 0X3
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, REAL_ESTATE
+
+        JUMP WAIT_FOR_ADVISOR_INPUT
+
+RETIREMENT:
+    PRINT "Start early, invest consistently, and let compound interest work."
+    IOOUT 0X1 0X0A
+    PRINT "A retirement fund ensures peace of mind."
+    IOOUT 0X1 0X0A
+    JUMP WAIT_FOR_CONTINUE
+
+EMERGENCY_FUND:
+    PRINT "An emergency fund covers 3-6 months of expenses."
+    IOOUT 0X1 0X0A
+    PRINT "Helps you handle unexpected events."
+    IOOUT 0X1 0X0A
+    JUMP WAIT_FOR_CONTINUE
+
+REAL_ESTATE:
+    PRINT "Real estate provides rental income and asset growth."
+    IOOUT 0X1 0X0A
+    PRINT "Make sure to research the market before investing."
+    IOOUT 0X1 0X0A
+    JUMP WAIT_FOR_CONTINUE
+
+WAIT_FOR_CONTINUE:
+    PRINT "Press any key to return to the main menu..."
+    IOOUT 0X1 0X0A
+
+    WAIT_FOR_ANY_KEY:
+        LOADI R0, 0X0
+        SAVE_KEY R1
+        ALU CMP, FLAGS R0, R1
+        CJUMP EQ, WAIT_FOR_ANY_KEY
+
+    JUMP MENU
+
+EXIT_GAME:
+    PRINT "Thank you for managing your finances today!"
+    IOOUT 0X1 0X0A
+    JUMP START
