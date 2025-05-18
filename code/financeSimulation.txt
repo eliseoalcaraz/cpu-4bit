@@ -179,6 +179,8 @@ BULLISH_TREND:
     PRINT "         /                  "
     IOOUT 0X1 0X0A
     PRINT "        /                   "
+    IOOUT 0X1 0X0A
+    JUMP BUY_SELL
 
 BEARISH_TREND:
     PRINT "    The market is BEARISH   "
@@ -201,6 +203,7 @@ BEARISH_TREND:
     IOOUT 0X1 0X0A
     PRINT "                      \     "
     IOOUT 0X1 0X0A
+    JUMP BUY_SELL
 
 BUY_SELL:
     LOADI R0, 0x0
