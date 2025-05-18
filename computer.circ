@@ -3024,12 +3024,6 @@
     <wire from="(960,560)" to="(960,610)"/>
     <wire from="(980,560)" to="(1010,560)"/>
   </circuit>
-  <circuit name="dili_ma_delete">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="dili_ma_delete"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="2048000.0"/>
-  </circuit>
   <circuit name="micro_cycle">
     <a name="appearance" val="custom"/>
     <a name="circuit" val="micro_cycle"/>
@@ -5126,5 +5120,14 @@
     <wire from="(950,710)" to="(990,710)"/>
     <wire from="(980,40)" to="(980,410)"/>
     <wire from="(980,410)" to="(990,410)"/>
+  </circuit>
+  <circuit name="dili_ma_delete">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="dili_ma_delete"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="2048000.0"/>
+    <appear>
+      <circ-anchor facing="east" x="50" y="50"/>
+    </appear>
   </circuit>
 </project>
