@@ -132,7 +132,7 @@
       <a name="rows" val="20"/>
     </comp>
     <comp lib="5" loc="(900,520)" name="Keyboard"/>
-    <comp lib="8" loc="(967,498)" name="Text">
+    <comp lib="8" loc="(965,495)" name="Text">
       <a name="text" val="TYPE HERE"/>
     </comp>
     <comp loc="(600,600)" name="cpu">
@@ -954,7 +954,9 @@
     <comp loc="(2010,570)" name="alu">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(2240,1020)" name="control_unit"/>
+    <comp loc="(2240,1020)" name="control_unit">
+      <a name="facing" val="north"/>
+    </comp>
     <comp loc="(2340,720)" name="register_file">
       <a name="facing" val="north"/>
     </comp>
@@ -2422,15 +2424,15 @@
     </comp>
     <comp lib="0" loc="(1480,870)" name="Splitter">
       <a name="appear" val="center"/>
-      <a name="fanout" val="9"/>
-      <a name="incoming" val="9"/>
-      <a name="spacing" val="2"/>
-    </comp>
-    <comp lib="0" loc="(1480,870)" name="Splitter">
-      <a name="appear" val="center"/>
       <a name="facing" val="west"/>
       <a name="fanout" val="9"/>
       <a name="incoming" val="9"/>
+    </comp>
+    <comp lib="0" loc="(1480,870)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="fanout" val="9"/>
+      <a name="incoming" val="9"/>
+      <a name="spacing" val="2"/>
     </comp>
     <comp lib="0" loc="(1480,970)" name="Splitter">
       <a name="appear" val="center"/>
@@ -5120,14 +5122,5 @@
     <wire from="(950,710)" to="(990,710)"/>
     <wire from="(980,40)" to="(980,410)"/>
     <wire from="(980,410)" to="(990,410)"/>
-  </circuit>
-  <circuit name="dili_ma_delete">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="dili_ma_delete"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="2048000.0"/>
-    <appear>
-      <circ-anchor facing="east" x="50" y="50"/>
-    </appear>
   </circuit>
 </project>
