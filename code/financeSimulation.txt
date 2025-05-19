@@ -230,13 +230,24 @@ REAL_ESTATE:
     JUMP WAIT_FOR_CONTINUE
 
 TRADING_SIMULATION:
-    PRINT "Welcome to the Trading Simulation"
+    IOOUT 0X1 0X0C
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                   TRADING SIMULATION                     |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "              Welcome to the Trading Simulation            "
     IOOUT 0x1 0x0A
-    PRINT "Choose a crypto to trade:"
     IOOUT 0x1 0x0A
-    PRINT "1. BTC (Bitcoin)"
     IOOUT 0x1 0x0A
-    PRINT "2. ETH (Ethereum)"
+    PRINT "    Choose a crypto to trade:"
+    IOOUT 0x1 0x0A
+    PRINT "    1. BTC (Bitcoin)"
+    IOOUT 0x1 0x0A
+    PRINT "    2. ETH (Ethereum)"
     IOOUT 0x1 0x0A
 
 WAIT_FOR_COIN_CHOICE:
@@ -256,58 +267,87 @@ WAIT_FOR_COIN_CHOICE:
     JUMP WAIT_FOR_COIN_CHOICE
 
 BULLISH_TREND:
-    PRINT "    The market is BULLISH   "
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "                      /     "
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "                     /      "
+    PRINT "|                     Bitcoin Chart                        |"
     IOOUT 0X1 0X0A
-    PRINT "                    /       "
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "                   /        "
     IOOUT 0X1 0X0A
-    PRINT "            /\    /         "
     IOOUT 0X1 0X0A
-    PRINT "           /  \  /          "
     IOOUT 0X1 0X0A
-    PRINT "          /    \/           "
     IOOUT 0X1 0X0A
-    PRINT "         /                  "
+    PRINT "        |-------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "        /                   "
+    PRINT "        |                      /\      /            |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                     /   \   /             |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                    /      \/              |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                   /                       |"
+    IOOUT 0X1 0X0A
+    PRINT "        |            /\    /                        |"
+    IOOUT 0X1 0X0A
+    PRINT "        |           /  \  /                         |"
+    IOOUT 0X1 0X0A
+    PRINT "        |          /    \/                          |"
+    IOOUT 0X1 0X0A
+    PRINT "        |         /                                 |"
+    IOOUT 0X1 0X0A
+    PRINT "        |        /                                  |"
+    IOOUT 0X1 0X0A
+    PRINT "        |-------------------------------------------|"
     IOOUT 0X1 0X0A
     JUMP BUY_SELL
 
 BEARISH_TREND:
-    PRINT "    The market is BEARISH   "
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "        \                   "
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "         \                  "
+    PRINT "|                     Ethereum Chart                       |"
     IOOUT 0X1 0X0A
-    PRINT "          \    /\           "
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "           \  /  \          "
     IOOUT 0X1 0X0A
-    PRINT "            \/    \         "
     IOOUT 0X1 0X0A
-    PRINT "                   \        "
     IOOUT 0X1 0X0A
-    PRINT "                    \       "
     IOOUT 0X1 0X0A
-    PRINT "                     \      "
+    PRINT "        |-------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "                      \     "
+    PRINT "        |        \                                  |"
+    IOOUT 0X1 0X0A
+    PRINT "        |         \                                 |"
+    IOOUT 0X1 0X0A
+    PRINT "        |          \    /\                          |"
+    IOOUT 0X1 0X0A
+    PRINT "        |           \  /  \                         |"
+    IOOUT 0X1 0X0A
+    PRINT "        |            \/    \                        |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                   \                       |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                    \    /\                |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                     \  /                  |"
+    IOOUT 0X1 0X0A
+    PRINT "        |                      \/                   |"
+    IOOUT 0X1 0X0A
+    PRINT "        |-------------------------------------------|"
     IOOUT 0X1 0X0A
     JUMP BUY_SELL
 
 BUY_SELL:
     LOADI R0, 0x0
-    PRINT "BUY OR SELL?"
     IOOUT 0X1 0X0A
-    PRINT "1. BUY "
+    PRINT "   BUY OR SELL?"
     IOOUT 0X1 0X0A
-    PRINT "2. SELL "
+    PRINT "   1. BUY "
+    IOOUT 0X1 0X0A
+    PRINT "   2. SELL "
     IOOUT 0X1 0X0A
 
     MAKE_DECISION:
@@ -323,19 +363,49 @@ BUY_SELL:
         JUMP MAKE_DECISION
 
 BUYING:
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "You're buying...."
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                          BUYING                          |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   You're buying...."
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   Secure profits and,"
+    IOOUT 0X1 0X0A
+    PRINT "   manage your risk!"
+    IOOUT 0X1 0X0A
     IOOUT 0X1 0X0A
     JUMP RANDOM_RESULT_GENERATOR
 
 SELLING:
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "You're selling..."
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                          SELLING                         |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   You're selling..."
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   Follow your trading plan, and"
+    IOOUT 0X1 0X0A
+    PRINT "   manage your risk!"
+    IOOUT 0X1 0X0A
     IOOUT 0X1 0X0A
     JUMP RANDOM_RESULT_GENERATOR
 
 RANDOM_RESULT_GENERATOR:
-    PRINT "PRESS 1 IF YOU WANT TO KNOW THE RESULT OF YOUR TRADE "
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   PRESS 1 TO CLOSE THE TRADE! "
     IOOUT 0x1 0x0A
 
 DO_ADD:
@@ -364,12 +434,36 @@ SHOW_RESULT:
     JUMP TRADE_LOSS
 
 TRADE_WIN:
-    PRINT "You win a trade"
+    IOOUT 0X1 0X0C
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                      TRADE CLOSED                        |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "                  $$$  PROFIT TAKEN  $$$                     "
+    IOOUT 0x1 0x0A
+    IOOUT 0x1 0x0A
+    PRINT "                         You win!                           "
     IOOUT 0x1 0x0A
     JUMP WAIT_FOR_CONTINUE
 
 TRADE_LOSS:
-    PRINT "You lose a trade"
+    IOOUT 0X1 0X0C
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                      TRADE CLOSED                        |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "                -$-$-$    STOP HIT    -$-$-$                "
+    IOOUT 0x1 0x0A
+    IOOUT 0x1 0x0A
+    PRINT "                         You lose!                           "
     IOOUT 0x1 0x0A
     JUMP WAIT_FOR_CONTINUE
 
@@ -390,6 +484,14 @@ WAIT_FOR_CONTINUE:
     JUMP MENU
 
 EXIT_JOURNEY:
-    PRINT "Thank you for managing your finances today!"
+    IOOUT 0X1 0X0C
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "        Thank you for managing your finances today!"
     IOOUT 0X1 0X0A
     JUMP WAIT_FOR_CONTINUE
