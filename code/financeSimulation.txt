@@ -120,15 +120,40 @@ LEARN_BONDS:
     JUMP WAIT_FOR_CONTINUE
 
 FINANCIAL_ADVISOR:
-    PRINT "You consult a financial advisor for guidance."
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "Choose your goal:"
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "1. Save for Retirement"
+    PRINT "|                    FINANCE GUIDANCE                      |"
     IOOUT 0X1 0X0A
-    PRINT "2. Build Emergency Fund"
+    PRINT "|----------------------------------------------------------|"
     IOOUT 0X1 0X0A
-    PRINT "3. Invest in Real Estate"
+    PRINT "      _____    "
+    IOOUT 0X1 0X0A
+    PRINT "     /     \   "
+    IOOUT 0X1 0X0A
+    PRINT "     \_____/   "
+    IOOUT 0X1 0X0A
+    PRINT "      .~~~~~~.     "
+    IOOUT 0X1 0X0A
+    PRINT "    /          \       You consult a financial advisor"
+    IOOUT 0X1 0X0A
+    PRINT "   |    O  O    |      for guidance!"
+    IOOUT 0X1 0X0A
+    PRINT "   |      >     | "
+    IOOUT 0X1 0X0A
+    PRINT "    \   ____   /  "
+    IOOUT 0X1 0X0A
+    PRINT "      \______/   "
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "   Choose your goal:"
+    IOOUT 0X1 0X0A
+    PRINT "   1. Save for Retirement"
+    IOOUT 0X1 0X0A
+    PRINT "   2. Build Emergency Fund"
+    IOOUT 0X1 0X0A
+    PRINT "   3. Invest in Real Estate"
     IOOUT 0X1 0X0A
 
     WAIT_FOR_ADVISOR_INPUT:
@@ -152,23 +177,55 @@ FINANCIAL_ADVISOR:
         JUMP WAIT_FOR_ADVISOR_INPUT
 
 RETIREMENT:
-    PRINT "Start early, invest consistently, and let compound interest work."
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "A retirement fund ensures peace of mind."
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                       RETIREMENT                         |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  Start early, invest consistently, and"
+    IOOUT 0X1 0X0A
+    PRINT "  let compound interest work."
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  A retirement fund ensures peace of mind."
     IOOUT 0X1 0X0A
     JUMP WAIT_FOR_CONTINUE
 
 EMERGENCY_FUND:
-    PRINT "An emergency fund covers 3-6 months of expenses."
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "Helps you handle unexpected events."
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                    EMERGENCY FUND                        |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  An emergency fund covers 3-6 months of expenses."
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  Helps you handle unexpected events."
     IOOUT 0X1 0X0A
     JUMP WAIT_FOR_CONTINUE
 
 REAL_ESTATE:
-    PRINT "Real estate provides rental income and asset growth."
+    IOOUT 0X1 0X0C
     IOOUT 0X1 0X0A
-    PRINT "Make sure to research the market before investing."
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    PRINT "|                      REAL ESTATE                         |"
+    IOOUT 0X1 0X0A
+    PRINT "|----------------------------------------------------------|"
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  Real estate provides rental income and asset growth."
+    IOOUT 0X1 0X0A
+    IOOUT 0X1 0X0A
+    PRINT "  Make sure to research the market before investing."
     IOOUT 0X1 0X0A
     JUMP WAIT_FOR_CONTINUE
 
