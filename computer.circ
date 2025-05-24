@@ -6,8 +6,6 @@
     <tool name="Splitter">
       <a name="appear" val="center"/>
       <a name="facing" val="west"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
     </tool>
     <tool name="Pin">
       <a name="appearance" val="classic"/>
@@ -300,11 +298,6 @@
     <comp lib="0" loc="(1810,740)" name="Tunnel">
       <a name="label" val="REGFILE_TO_BUS"/>
       <a name="labelfont" val="SansSerif bold 8"/>
-    </comp>
-    <comp lib="0" loc="(1820,590)" name="Splitter">
-      <a name="appear" val="center"/>
-      <a name="facing" val="south"/>
-      <a name="spacing" val="2"/>
     </comp>
     <comp lib="0" loc="(1840,1520)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -612,10 +605,6 @@
     <comp lib="1" loc="(1780,760)" name="Controlled Buffer">
       <a name="facing" val="west"/>
       <a name="width" val="4"/>
-    </comp>
-    <comp lib="1" loc="(1810,640)" name="OR Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(1860,1540)" name="Controlled Buffer">
       <a name="facing" val="west"/>
@@ -1023,10 +1012,7 @@
     <wire from="(1810,500)" to="(1830,500)"/>
     <wire from="(1810,520)" to="(1810,580)"/>
     <wire from="(1810,520)" to="(1830,520)"/>
-    <wire from="(1810,590)" to="(1820,590)"/>
-    <wire from="(1810,640)" to="(1810,650)"/>
-    <wire from="(1810,650)" to="(1840,650)"/>
-    <wire from="(1820,590)" to="(1920,590)"/>
+    <wire from="(1810,590)" to="(1920,590)"/>
     <wire from="(1830,900)" to="(2130,900)"/>
     <wire from="(1840,1520)" to="(1870,1520)"/>
     <wire from="(1840,530)" to="(1840,650)"/>
@@ -1613,13 +1599,12 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="179" y="120">BORROW OUT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="211" y="111">DATA OUT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="215" y="70">B IN</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="67" y="118">ENABLE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="67" y="118">IN OP</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="215" y="59">A IN</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="210" y="101">FLAG OUT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="140" y="89">ALU</text>
       <circ-anchor facing="north" x="140" y="90"/>
-      <circ-port dir="in" pin="610,540" x="50" y="120"/>
-      <circ-port dir="in" pin="610,570" x="50" y="110"/>
+      <circ-port dir="in" pin="610,590" x="50" y="110"/>
       <circ-port dir="in" pin="620,380" x="230" y="60"/>
       <circ-port dir="in" pin="620,430" x="230" y="70"/>
       <circ-port dir="in" pin="780,280" x="160" y="50"/>
@@ -1627,6 +1612,7 @@
       <circ-port dir="out" pin="1210,600" x="180" y="130"/>
       <circ-port dir="out" pin="1250,500" x="230" y="110"/>
       <circ-port dir="out" pin="1250,640" x="230" y="100"/>
+      <circ-port dir="out" pin="1260,540" x="50" y="120"/>
     </appear>
     <comp lib="0" loc="(1150,640)" name="Splitter">
       <a name="appear" val="center"/>
@@ -1654,11 +1640,13 @@
       <a name="output" val="true"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(610,540)" name="Pin">
+    <comp lib="0" loc="(1260,540)" name="Pin">
       <a name="appearance" val="NewPins"/>
-      <a name="label" val="ENABLE"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="OP"/>
+      <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(610,570)" name="Pin">
+    <comp lib="0" loc="(610,590)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="SELECT_OP"/>
       <a name="width" val="2"/>
@@ -1673,6 +1661,11 @@
       <a name="label" val="B_IN"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="0" loc="(650,590)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="north"/>
+      <a name="spacing" val="2"/>
+    </comp>
     <comp lib="0" loc="(780,280)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
@@ -1682,6 +1675,10 @@
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
       <a name="label" val="CARRY_IN"/>
+    </comp>
+    <comp lib="1" loc="(640,540)" name="OR Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
     </comp>
     <comp lib="2" loc="(1210,500)" name="Multiplexer">
       <a name="enable" val="true"/>
@@ -1705,13 +1702,15 @@
     <wire from="(1160,510)" to="(1160,640)"/>
     <wire from="(1160,510)" to="(1170,510)"/>
     <wire from="(1160,640)" to="(1250,640)"/>
-    <wire from="(1190,520)" to="(1190,570)"/>
+    <wire from="(1190,520)" to="(1190,590)"/>
     <wire from="(1200,520)" to="(1200,540)"/>
+    <wire from="(1200,540)" to="(1260,540)"/>
     <wire from="(1210,500)" to="(1250,500)"/>
-    <wire from="(610,540)" to="(1200,540)"/>
-    <wire from="(610,570)" to="(1190,570)"/>
+    <wire from="(610,590)" to="(650,590)"/>
     <wire from="(620,380)" to="(750,380)"/>
     <wire from="(620,430)" to="(740,430)"/>
+    <wire from="(640,540)" to="(1200,540)"/>
+    <wire from="(650,590)" to="(1190,590)"/>
     <wire from="(740,400)" to="(740,430)"/>
     <wire from="(740,400)" to="(860,400)"/>
     <wire from="(740,430)" to="(740,510)"/>
