@@ -155,7 +155,7 @@ def assemble_code(assembly_code):
                 current_address += 1  # Other instructions take 1 word
 
     # Second pass: Assemble code, replacing labels with addresses
-    current_address = 0  # Reset the address counter
+    current_address = 0  # Reset the address
     for line_num, line in enumerate(lines, start=1):
         line = line.split(";")[0].strip()  # Remove comments and trim whitespace
         if not line:
@@ -304,25 +304,12 @@ text_editor.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
 # Example code button
 def load_example():
-    example_code = """; Example assembly code
-; Calculate factorial of 5
-LOADI R0, 0x5    ; n=5
-LOADI R1, 0x1    ; result=1
-LOOP:
-ALU CMP R0, R0, R1  ; Compare n with 1
-CJUMP EQ, DONE      ; If n==1, jump to DONE
-ALU MUL R1, R1, R0  ; result = result * n
-ALU SUB R0, R0, R1  ; n = n - 1
-JUMP LOOP           ; Repeat
-DONE:
-IOOUT 0x1 0x52      ; Print 'R'
-IOOUT 0x1 0x65      ; Print 'e'
-IOOUT 0x1 0x73      ; Print 's'
-IOOUT 0x1 0x75      ; Print 'u'
-IOOUT 0x1 0x6C      ; Print 'l'
-IOOUT 0x1 0x74      ; Print 't'
-IOOUT 0x1 0x3A      ; Print ':'
-STORE R1, 0xFFFF    ; Store result in memory
+    example_code = """
+START:
+    COUNTER = 0x0
+
+MAIN:
+    PRINT "Hello, World!"
 """
     text_editor.delete("1.0", tk.END)
     text_editor.insert("1.0", example_code)
