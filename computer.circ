@@ -64,9 +64,7 @@
     <tool lib="8" name="Wiring Tool"/>
     <tool lib="8" name="Text Tool"/>
     <sep/>
-    <tool lib="0" name="Pin">
-      <a name="facing" val="south"/>
-    </tool>
+    <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -77,7 +75,6 @@
       <a name="size" val="20"/>
     </tool>
     <tool lib="1" name="AND Gate">
-      <a name="facing" val="west"/>
       <a name="size" val="30"/>
     </tool>
     <tool lib="1" name="OR Gate"/>
@@ -291,7 +288,7 @@
     </comp>
     <comp lib="0" loc="(1350,1530)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="READ_KEYBOARD"/>
+      <a name="label" val="KEYBOARD_READ"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(1350,1550)" name="Tunnel">
@@ -401,12 +398,12 @@
     </comp>
     <comp lib="0" loc="(1730,1570)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="READ_8_BIT_OUTPUT"/>
+      <a name="label" val="IO_READ"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(1730,1590)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="IO_SELECT_REG_WRITE"/>
+      <a name="label" val="IO_WRITE"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(1780,840)" name="Tunnel">
@@ -566,11 +563,11 @@
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(2240,890)" name="Tunnel">
-      <a name="label" val="READ_8_BIT_OUTPUT"/>
+      <a name="label" val="IO_READ"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(2240,910)" name="Tunnel">
-      <a name="label" val="IO_SELECT_REG_WRITE"/>
+      <a name="label" val="IO_WRITE"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(2240,930)" name="Tunnel">
@@ -578,7 +575,7 @@
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(2240,950)" name="Tunnel">
-      <a name="label" val="READ_KEYBOARD"/>
+      <a name="label" val="KEYBOARD_READ"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(2540,120)" name="Pin">
@@ -864,10 +861,10 @@
     <comp loc="(1070,500)" name="program_counter">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1680,610)" name="alu_memory_access">
+    <comp loc="(1680,610)" name="alu_memory_address">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1690,460)" name="register_memory_access">
+    <comp loc="(1690,460)" name="register_memory_address">
       <a name="facing" val="north"/>
     </comp>
     <comp loc="(1700,780)" name="alu">
@@ -1937,9 +1934,9 @@
     <wire from="(980,620)" to="(1030,620)"/>
     <wire from="(980,630)" to="(1020,630)"/>
   </circuit>
-  <circuit name="register_memory_access">
+  <circuit name="register_memory_address">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="register_memory_access"/>
+    <a name="circuit" val="register_memory_address"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="2048000.0"/>
     <appear>
@@ -1992,9 +1989,9 @@
     <wire from="(830,540)" to="(830,550)"/>
     <wire from="(860,480)" to="(890,480)"/>
   </circuit>
-  <circuit name="alu_memory_access">
+  <circuit name="alu_memory_address">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="alu_memory_access"/>
+    <a name="circuit" val="alu_memory_address"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="2048000.0"/>
     <appear>
@@ -5199,8 +5196,8 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="258" y="190">RMA WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="260" y="210">AMA WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="255" y="230">REGFILE WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="249" y="349">NIBLE LOW WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="251" y="331">NIBLE HIGH WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="249" y="349">OUT LOW WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="251" y="331">OUT HIGH WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="248" y="420">STORE CONDITION</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="252" y="310">KEYBOARD WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="258" y="291">MAR WRITE</text>
@@ -5327,13 +5324,13 @@
     <comp lib="0" loc="(920,480)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="NIBLE_HIGH_WRITE"/>
+      <a name="label" val="OUT_HIGH_WRITE"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(920,510)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="NIBLE_LOW_WRITE"/>
+      <a name="label" val="OUT_LOW_WRITE"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(920,540)" name="Pin">
@@ -6046,6 +6043,104 @@
     <wire from="(910,390)" to="(920,390)"/>
     <wire from="(910,40)" to="(910,390)"/>
   </circuit>
+  <circuit name="flag_check">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="flag_check"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="2048000.0"/>
+    <appear>
+      <rect fill="none" height="60" stroke="#000000" width="160" x="50" y="50"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="132" y="81">FLAG CHECK</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="73" y="70">CURRENT FLAG</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="65" y="91">CHECK</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="196" y="81">VALID</text>
+      <circ-anchor facing="north" x="130" y="80"/>
+      <circ-port dir="in" pin="200,140" x="50" y="90"/>
+      <circ-port dir="in" pin="350,160" x="50" y="70"/>
+      <circ-port dir="out" pin="750,300" x="210" y="80"/>
+    </appear>
+    <comp lib="0" loc="(200,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="south"/>
+      <a name="label" val="CHECK_FLAG"/>
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(350,160)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="south"/>
+      <a name="label" val="CURRENT_FLAG"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(350,180)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(750,300)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="VALID"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(590,240)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(590,280)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(590,340)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(590,380)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(710,300)" name="OR Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="2" loc="(200,280)" name="Decoder">
+      <a name="enable" val="false"/>
+      <a name="select" val="2"/>
+      <a name="selloc" val="tr"/>
+    </comp>
+    <wire from="(200,140)" to="(200,280)"/>
+    <wire from="(220,280)" to="(230,280)"/>
+    <wire from="(220,290)" to="(560,290)"/>
+    <wire from="(220,300)" to="(240,300)"/>
+    <wire from="(220,310)" to="(230,310)"/>
+    <wire from="(230,250)" to="(230,280)"/>
+    <wire from="(230,250)" to="(560,250)"/>
+    <wire from="(230,310)" to="(230,370)"/>
+    <wire from="(230,370)" to="(560,370)"/>
+    <wire from="(240,300)" to="(240,330)"/>
+    <wire from="(240,330)" to="(560,330)"/>
+    <wire from="(330,200)" to="(330,390)"/>
+    <wire from="(330,390)" to="(330,410)"/>
+    <wire from="(330,390)" to="(560,390)"/>
+    <wire from="(340,200)" to="(340,350)"/>
+    <wire from="(340,350)" to="(340,410)"/>
+    <wire from="(340,350)" to="(560,350)"/>
+    <wire from="(350,160)" to="(350,180)"/>
+    <wire from="(350,200)" to="(350,270)"/>
+    <wire from="(350,270)" to="(350,410)"/>
+    <wire from="(350,270)" to="(560,270)"/>
+    <wire from="(360,200)" to="(360,230)"/>
+    <wire from="(360,230)" to="(360,410)"/>
+    <wire from="(360,230)" to="(560,230)"/>
+    <wire from="(590,240)" to="(650,240)"/>
+    <wire from="(590,280)" to="(640,280)"/>
+    <wire from="(590,340)" to="(640,340)"/>
+    <wire from="(590,380)" to="(650,380)"/>
+    <wire from="(640,280)" to="(640,290)"/>
+    <wire from="(640,290)" to="(660,290)"/>
+    <wire from="(640,310)" to="(640,340)"/>
+    <wire from="(640,310)" to="(660,310)"/>
+    <wire from="(650,240)" to="(650,280)"/>
+    <wire from="(650,280)" to="(660,280)"/>
+    <wire from="(650,320)" to="(650,380)"/>
+    <wire from="(650,320)" to="(660,320)"/>
+    <wire from="(710,300)" to="(750,300)"/>
+  </circuit>
   <circuit name="control_unit">
     <a name="appearance" val="custom"/>
     <a name="circuit" val="control_unit"/>
@@ -6055,38 +6150,38 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="65" y="361">CLOCK</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="72" y="420">AMA RESET</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="248" y="210">MAR WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="243" y="99">KEYBOARD WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="242" y="99">KEYBOARD WRITE</text>
       <rect fill="none" height="390" stroke="#000000" width="220" x="50" y="50"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="249" y="409">RAM WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="231" y="59">OUTPUT HIGH NIBLE WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="238" y="60">OUTPUT HIGH WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="250" y="390">AMA WRITE</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="241" y="80">READ 8 BIT OUTPUT</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="254" y="80">IO READ</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="246" y="380">REGFILE WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="244" y="110">KEYBOARD READ</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="72" y="400">RMA RESET</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="111" y="431">JUMP ENABLE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="160" y="229">CONTROL</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="66" y="311">RAM IN</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="208" y="432">COUNTER ENABLE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="208" y="432">PC ENABLE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="158" y="244">UNIT</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="161" y="432">PC OUT DISABLE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="249" y="201">MAR READ</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="232" y="68">OUTPUT LOW NIBLE WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="240" y="71">OUTPUT LOW WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="85" y="109">INSTRUCTION REG IN</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="160" y="59">FLAG IN</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="246" y="301">REGFILE READ</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="234" y="419">INSTRUCTION REG WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="251" y="310">RAM READ</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="234" y="89">IO SELECTION REG WRITE</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="252" y="90">IO WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="249" y="400">RMA WRITE</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="65" y="379">RESET</text>
       <circ-anchor facing="north" x="160" y="240"/>
       <circ-port dir="in" pin="210,450" x="50" y="110"/>
-      <circ-port dir="in" pin="240,1030" x="50" y="310"/>
+      <circ-port dir="in" pin="240,1010" x="160" y="50"/>
+      <circ-port dir="in" pin="240,1060" x="50" y="310"/>
       <circ-port dir="in" pin="240,660" x="50" y="360"/>
       <circ-port dir="in" pin="240,690" x="50" y="380"/>
-      <circ-port dir="in" pin="240,980" x="160" y="50"/>
-      <circ-port dir="out" pin="1080,1010" x="110" y="440"/>
+      <circ-port dir="out" pin="1080,1000" x="110" y="440"/>
       <circ-port dir="out" pin="1140,810" x="210" y="440"/>
       <circ-port dir="out" pin="1180,820" x="160" y="440"/>
       <circ-port dir="out" pin="1250,430" x="270" y="310"/>
@@ -6107,7 +6202,7 @@
       <circ-port dir="out" pin="990,710" x="50" y="420"/>
       <circ-port dir="out" pin="990,760" x="50" y="400"/>
     </appear>
-    <comp lib="0" loc="(1080,1010)" name="Pin">
+    <comp lib="0" loc="(1080,1000)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="JUMP_ENABLE"/>
@@ -6223,19 +6318,19 @@
     <comp lib="0" loc="(1250,700)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="NIBLE_HIGH_WRITE"/>
+      <a name="label" val="OUT_HIGH_WRITE"/>
       <a name="labelfont" val="SansSerif bold 10"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(1250,720)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="NIBLE_LOW_WRITE"/>
+      <a name="label" val="OUT_LOW_WRITE"/>
       <a name="labelfont" val="SansSerif bold 10"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(1250,790)" name="Tunnel">
-      <a name="label" val="CONDITION_CHECK_STORE"/>
+      <a name="label" val="STORE_CONDITION"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(210,450)" name="Pin">
@@ -6243,17 +6338,22 @@
       <a name="label" val="INSTRUCTION"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(230,1050)" name="Tunnel">
+    <comp lib="0" loc="(230,1080)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="CONDITION_CHECK_STORE"/>
+      <a name="label" val="STORE_CONDITION"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
-    <comp lib="0" loc="(230,1110)" name="Tunnel">
+    <comp lib="0" loc="(230,1140)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="CONDITION_CHECK_RESET"/>
+      <a name="label" val="RESET_CONDITION"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
-    <comp lib="0" loc="(240,1030)" name="Pin">
+    <comp lib="0" loc="(240,1010)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="FLAG_IN"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(240,1060)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="FROM_RAM"/>
       <a name="width" val="4"/>
@@ -6266,21 +6366,11 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="RESET"/>
     </comp>
-    <comp lib="0" loc="(240,980)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="FLAG_IN"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(520,1110)" name="Splitter">
+    <comp lib="0" loc="(520,1040)" name="Splitter">
       <a name="appear" val="center"/>
       <a name="bit1" val="0"/>
       <a name="bit2" val="1"/>
       <a name="bit3" val="1"/>
-      <a name="incoming" val="4"/>
-    </comp>
-    <comp lib="0" loc="(570,980)" name="Splitter">
-      <a name="appear" val="center"/>
-      <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
     <comp lib="0" loc="(710,460)" name="Constant"/>
@@ -6291,7 +6381,7 @@
     </comp>
     <comp lib="0" loc="(850,740)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="CONDITION_CHECK_RESET"/>
+      <a name="label" val="RESET_CONDITION"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(990,710)" name="Pin">
@@ -6304,23 +6394,11 @@
       <a name="label" val="RMA_RESET"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(1010,1020)" name="AND Gate">
+    <comp lib="1" loc="(1010,1010)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(690,520)" name="NOT Gate">
       <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(790,1010)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(790,1050)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(790,1090)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(790,970)" name="AND Gate">
-      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(870,850)" name="NOT Gate">
       <a name="size" val="20"/>
@@ -6329,18 +6407,10 @@
       <a name="inputs" val="4"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(940,1030)" name="OR Gate">
-      <a name="inputs" val="4"/>
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="2" loc="(1060,1010)" name="Multiplexer">
+    <comp lib="2" loc="(1060,1000)" name="Multiplexer">
       <a name="selloc" val="tr"/>
     </comp>
-    <comp lib="2" loc="(590,1090)" name="Decoder">
-      <a name="disabled" val="Z"/>
-      <a name="select" val="2"/>
-    </comp>
-    <comp lib="4" loc="(410,1000)" name="Register">
+    <comp lib="4" loc="(410,1030)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="4"/>
     </comp>
@@ -6354,77 +6424,48 @@
     <comp loc="(550,440)" name="next_state_logic">
       <a name="facing" val="north"/>
     </comp>
+    <comp loc="(680,1020)" name="flag_check"/>
     <wire from="(1000,710)" to="(1000,740)"/>
     <wire from="(1000,710)" to="(1020,710)"/>
     <wire from="(1000,740)" to="(1000,760)"/>
     <wire from="(1000,760)" to="(1020,760)"/>
-    <wire from="(1010,1000)" to="(1030,1000)"/>
-    <wire from="(1010,1020)" to="(1030,1020)"/>
-    <wire from="(1010,960)" to="(1010,1000)"/>
-    <wire from="(1010,960)" to="(1090,960)"/>
-    <wire from="(1040,830)" to="(1040,990)"/>
-    <wire from="(1060,1010)" to="(1080,1010)"/>
-    <wire from="(1090,810)" to="(1090,960)"/>
+    <wire from="(1010,1010)" to="(1030,1010)"/>
+    <wire from="(1010,950)" to="(1010,990)"/>
+    <wire from="(1010,950)" to="(1090,950)"/>
+    <wire from="(1010,990)" to="(1030,990)"/>
+    <wire from="(1040,830)" to="(1040,980)"/>
+    <wire from="(1060,1000)" to="(1080,1000)"/>
+    <wire from="(1090,810)" to="(1090,950)"/>
     <wire from="(1180,810)" to="(1180,820)"/>
     <wire from="(210,450)" to="(280,450)"/>
-    <wire from="(230,1050)" to="(410,1050)"/>
-    <wire from="(230,1110)" to="(440,1110)"/>
-    <wire from="(240,1030)" to="(410,1030)"/>
+    <wire from="(230,1080)" to="(410,1080)"/>
+    <wire from="(230,1140)" to="(440,1140)"/>
+    <wire from="(240,1010)" to="(600,1010)"/>
+    <wire from="(240,1060)" to="(410,1060)"/>
     <wire from="(240,660)" to="(370,660)"/>
     <wire from="(240,690)" to="(760,690)"/>
-    <wire from="(240,980)" to="(570,980)"/>
     <wire from="(280,450)" to="(280,840)"/>
     <wire from="(280,450)" to="(440,450)"/>
     <wire from="(280,840)" to="(810,840)"/>
-    <wire from="(370,1070)" to="(410,1070)"/>
-    <wire from="(370,660)" to="(370,1070)"/>
+    <wire from="(370,1100)" to="(410,1100)"/>
+    <wire from="(370,660)" to="(370,1100)"/>
     <wire from="(370,660)" to="(650,660)"/>
     <wire from="(420,370)" to="(420,420)"/>
     <wire from="(420,370)" to="(810,370)"/>
     <wire from="(420,420)" to="(440,420)"/>
-    <wire from="(440,1090)" to="(440,1110)"/>
-    <wire from="(470,1030)" to="(520,1030)"/>
-    <wire from="(520,1030)" to="(520,1110)"/>
-    <wire from="(540,1100)" to="(590,1100)"/>
-    <wire from="(590,1090)" to="(590,1100)"/>
-    <wire from="(590,960)" to="(760,960)"/>
-    <wire from="(590,970)" to="(750,970)"/>
-    <wire from="(590,980)" to="(680,980)"/>
-    <wire from="(590,990)" to="(670,990)"/>
-    <wire from="(610,1050)" to="(690,1050)"/>
-    <wire from="(610,1060)" to="(700,1060)"/>
-    <wire from="(610,1070)" to="(710,1070)"/>
-    <wire from="(610,1080)" to="(710,1080)"/>
+    <wire from="(440,1120)" to="(440,1140)"/>
+    <wire from="(470,1060)" to="(520,1060)"/>
+    <wire from="(520,1040)" to="(520,1060)"/>
+    <wire from="(540,1030)" to="(600,1030)"/>
     <wire from="(650,520)" to="(650,660)"/>
     <wire from="(650,520)" to="(670,520)"/>
     <wire from="(660,440)" to="(730,440)"/>
-    <wire from="(670,1000)" to="(730,1000)"/>
-    <wire from="(670,990)" to="(670,1000)"/>
-    <wire from="(680,980)" to="(680,990)"/>
-    <wire from="(680,990)" to="(740,990)"/>
     <wire from="(690,520)" to="(730,520)"/>
-    <wire from="(690,980)" to="(690,1050)"/>
-    <wire from="(690,980)" to="(760,980)"/>
-    <wire from="(700,1020)" to="(700,1060)"/>
-    <wire from="(700,1020)" to="(760,1020)"/>
-    <wire from="(710,1060)" to="(710,1070)"/>
-    <wire from="(710,1060)" to="(760,1060)"/>
-    <wire from="(710,1080)" to="(710,1100)"/>
-    <wire from="(710,1100)" to="(760,1100)"/>
     <wire from="(710,460)" to="(730,460)"/>
-    <wire from="(730,1000)" to="(730,1080)"/>
-    <wire from="(730,1080)" to="(760,1080)"/>
     <wire from="(730,480)" to="(730,520)"/>
-    <wire from="(740,1040)" to="(760,1040)"/>
-    <wire from="(740,990)" to="(740,1040)"/>
-    <wire from="(750,1000)" to="(760,1000)"/>
-    <wire from="(750,970)" to="(750,1000)"/>
+    <wire from="(760,1020)" to="(980,1020)"/>
     <wire from="(760,500)" to="(760,690)"/>
-    <wire from="(790,1010)" to="(890,1010)"/>
-    <wire from="(790,1050)" to="(890,1050)"/>
-    <wire from="(790,1090)" to="(900,1090)"/>
     <wire from="(790,440)" to="(810,440)"/>
-    <wire from="(790,970)" to="(900,970)"/>
     <wire from="(810,370)" to="(810,440)"/>
     <wire from="(810,440)" to="(1020,440)"/>
     <wire from="(830,810)" to="(830,820)"/>
@@ -6436,19 +6477,10 @@
     <wire from="(840,820)" to="(880,820)"/>
     <wire from="(850,740)" to="(1000,740)"/>
     <wire from="(870,850)" to="(880,850)"/>
-    <wire from="(890,1010)" to="(890,1020)"/>
-    <wire from="(890,1020)" to="(910,1020)"/>
-    <wire from="(890,1040)" to="(890,1050)"/>
-    <wire from="(890,1040)" to="(910,1040)"/>
-    <wire from="(900,1010)" to="(910,1010)"/>
-    <wire from="(900,1050)" to="(900,1090)"/>
-    <wire from="(900,1050)" to="(910,1050)"/>
-    <wire from="(900,970)" to="(900,1010)"/>
     <wire from="(910,830)" to="(1040,830)"/>
-    <wire from="(940,1030)" to="(980,1030)"/>
-    <wire from="(950,1010)" to="(980,1010)"/>
-    <wire from="(950,960)" to="(1010,960)"/>
-    <wire from="(950,960)" to="(950,1010)"/>
+    <wire from="(950,1000)" to="(980,1000)"/>
+    <wire from="(950,950)" to="(1010,950)"/>
+    <wire from="(950,950)" to="(950,1000)"/>
     <wire from="(990,710)" to="(1000,710)"/>
     <wire from="(990,760)" to="(1000,760)"/>
   </circuit>
