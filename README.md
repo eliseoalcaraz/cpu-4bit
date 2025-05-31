@@ -18,6 +18,9 @@
 | SAVEKEY dest        | 1001 DD00           | dest ← keyboard value         | Stores value from keyboard into register                                    |
 
 
+## ⚠️ Disclaimer
+> This program is **not related to financial advice, services, or real-world finance markets**.
+> The "Finance Assembly Code" is purely a **simulation created for educational purposes only**.
 
 <details>
   <summary>💰 Finance Assembly Code</summary>
