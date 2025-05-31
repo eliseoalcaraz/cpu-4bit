@@ -19,7 +19,7 @@
 
 
 ## ⚠️ Disclaimer
-> This program is **not related to financial advice, services, or real-world finance markets**.
+> This program is **not related to any financial advice, services, or real-world finance markets**.
 > The "Finance Assembly Code" is purely a **simulation created for educational purposes only**.
 
 <details>
