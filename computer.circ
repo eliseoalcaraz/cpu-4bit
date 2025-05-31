@@ -6145,6 +6145,7 @@
     <a name="appearance" val="custom"/>
     <a name="circuit" val="control_unit"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="clabelup" val="north"/>
     <a name="simulationFrequency" val="2048000.0"/>
     <appear>
       <text dominant-baseline="central" font-family="SansSerif" font-size="5" text-anchor="middle" x="65" y="361">CLOCK</text>
@@ -6424,7 +6425,9 @@
     <comp loc="(550,440)" name="next_state_logic">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(680,1020)" name="flag_check"/>
+    <comp loc="(680,1020)" name="flag_check">
+      <a name="facing" val="north"/>
+    </comp>
     <wire from="(1000,710)" to="(1000,740)"/>
     <wire from="(1000,710)" to="(1020,710)"/>
     <wire from="(1000,740)" to="(1000,760)"/>
